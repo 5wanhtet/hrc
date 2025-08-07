@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="Screw">
+    <Fallback>
+      <Sequence>
+        <Move_To name="Move_To_Screw"/>
+        <Fallback>
+          <Verify_Position name="Verify_Current_Position"/>
+          <Detect_Object/>
+          <Move_To name="Move_To_Exact_Screw_Position"/>
+        </Fallback>
+        <RetryUntilSuccessful num_attempts="4">
+          <Align_Tool_With_Target/>
+        </RetryUntilSuccessful>
+        <Unbolt/>
+        <Move_To name="Move_To_Bin"/>
+        <Place_Object name="Place_Object_In_Bin"/>
+      </Sequence>
+      <AskForHelp/>
+    </Fallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="Unbolting">
+    <Fallback>
+      <Sequence>
+        <Activate_Vision_System/>
+        <Fallback>
+          <Check_Tool/>
+          <SubTree ID="Tool_Change"/>
+        </Fallback>
+        <Activate_Vision_System/>
+        <Parallel failure_count="0"
+                  success_count="2"
+                  _description="Success_threshold =&quot;2&quot; means only return success when both child node succeed">
+          <AsyncFallback>
+            <RetryUntilSuccessful num_attempts="4">
+              <SequenceWithMemory>
+                <SubTree ID="Screw"/>
+              </SequenceWithMemory>
+            </RetryUntilSuccessful>
+            <HRC _description="this node is temporary, will add more when i know more T^T"/>
+          </AsyncFallback>
+        </Parallel>
+      </Sequence>
+      <AskForHelp/>
+    </Fallback>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="Activate_Vision_System"
+            editable="true"/>
+    <Action ID="Align_Tool_With_Target"
+            editable="true"/>
+    <Action ID="AskForHelp"
+            editable="true"/>
+    <Condition ID="Check_Tool"
+               editable="true"/>
+    <Action ID="Detect_Object"
+            editable="true"/>
+    <Action ID="HRC"
+            editable="true"/>
+    <Action ID="Move_To"
+            editable="true"/>
+    <Action ID="Place_Object"
+            editable="true"/>
+    <Action ID="Unbolt"
+            editable="true"/>
+    <Condition ID="Verify_Position"
+               editable="true"/>
+  </TreeNodesModel>
+
+</root>

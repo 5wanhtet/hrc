@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C/C++ object files and build directories
+*.o
+*.obj
+*.so
+*.exe
+*.dll
+*.out
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# VS Code and JetBrains IDE settings
+.vscode/
+.idea/
+
+# Node.js dependencies
+node_modules/
+
+# Python virtual environments
+venv/
+.env/
+
+# ROS (if working with ROS packages)
+devel/
+install/
+log/

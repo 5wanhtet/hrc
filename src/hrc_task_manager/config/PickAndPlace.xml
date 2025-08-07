@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+
+  <BehaviorTree ID="Tool_Change">
+    <AlwaysSuccess/>
+  </BehaviorTree>
+
+
+  <BehaviorTree ID="PickAndPlace">
+    <Fallback>
+      <Sequence>
+        <Fallback>
+          <Check_Tool _description="Check if its correct tool"/>
+          <SubTree ID="Tool_Change"/>
+        </Fallback>
+        <DetectObject/>
+        <Verify_Position name="Verify_Current_Position"/>
+        <Move_To name="Move_To_Pick_Location"
+                 _description="whatever is the current tool of bot, it will move to that location to switch tool"/>
+        <Pick_Object/>
+        <Verify_Position name="Verify_Current_Position"/>
+        <Move_To name="Move_To_Place_Location"/>
+        <Place_Object/>
+      </Sequence>
+      <AskForHelp/>
+    </Fallback>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="AskForHelp"
+            editable="true"/>
+    <Condition ID="Check_Tool"
+               editable="true"/>
+    <Action ID="DetectObject"
+            editable="true"/>
+    <Action ID="Move_To"
+            editable="true"/>
+    <Action ID="Pick_Object"
+            editable="true"/>
+    <Action ID="Place_Object"
+            editable="true"/>
+    <Condition ID="Verify_Position"
+               editable="true"/>
+  </TreeNodesModel>
+
+</root>

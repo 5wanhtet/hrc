@@ -1,0 +1,9 @@
+<root BTCPP_format="4">
+  <BehaviorTree ID="Untitled">
+    <Sequence>
+        <AlignToolWithTarget/>
+        <AlignToolWithTarget/>
+        <AlignToolWithTarget/>
+    </Sequence>
+  </BehaviorTree>
+</root>

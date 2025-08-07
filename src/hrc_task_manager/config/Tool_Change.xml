@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="Tool_Change">
+    <Fallback>
+      <Sequence>
+        <Verify_Position name="Verify_Current_Position"/>
+        <Move_To name="Move_To_Current_Tool_In_Use_Staion"/>
+        <Verify_Position name="Verify_Current_Position"/>
+        <Detach_Tool/>
+        <Move_To name="Move_To_New_Tool_Position"/>
+        <Verify_Position name="Verify_Current_Position"/>
+        <Attach_Tool/>
+        <Check_Tool _description="Check for correct tool before carrying out next process"/>
+      </Sequence>
+      <AskForHelp/>
+    </Fallback>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="AskForHelp"
+            editable="true"/>
+    <Action ID="Attach_Tool"
+            editable="true"/>
+    <Condition ID="Check_Tool"
+               editable="true"/>
+    <Action ID="Detach_Tool"
+            editable="true"/>
+    <Action ID="Move_To"
+            editable="true"/>
+    <Condition ID="Verify_Position"
+               editable="true"/>
+  </TreeNodesModel>
+
+</root>
