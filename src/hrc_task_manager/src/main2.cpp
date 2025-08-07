@@ -48,25 +48,25 @@ int main(int argc, char** argv)
 
     RegisterCustomNodes(factory);
 
-    static const char* xml_text = R"(
-        <root BTCPP_format="4">
-          <BehaviorTree ID="Untitled">
-            <Sequence>
-                <AskForHelp/>
-            </Sequence>
-          </BehaviorTree>
-        </root>
-            )";
+    // static const char* xml_text = R"(
+    //     <root BTCPP_format="4">
+    //       <BehaviorTree ID="Untitled">
+    //         <Sequence>
+    //             <AskForHelp/>
+    //         </Sequence>
+    //       </BehaviorTree>
+    //     </root>
+    //         )";
 
-    //const std::string xml_filepath = "hrc-startup@hrcstartup/Desktop/4Aug/config/test.xml";
+    const std::string xml_filepath = "/home/robotara/hrc_ws/src/hrc_task_manager/config/PickAndPlace.xml";
 
-    //factory.registerBehaviorTreeFromFile(xml_filepath);
-    auto tree = factory.createTreeFromText(xml_text);
+    factory.registerBehaviorTreeFromFile(xml_filepath);
+    //auto tree = factory.createTreeFromText(xml_text);
 
-    //auto tree = factory.createTree("PickAndPlace");
+    auto tree = factory.createTree("PickAndPlace");
 
     // helper function to print the tree
-    printTreeRecursively(tree.rootNode());
+    BT::printTreeRecursively(tree.rootNode());
 
     // wait for dummy  node to be available
     std::cout << "Checking for dummy service..." << std::endl;
