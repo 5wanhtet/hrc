@@ -7,6 +7,7 @@ find_package(rclcpp REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(example_interfaces REQUIRED)
 
 include_directories(include)
 
@@ -55,6 +56,17 @@ add_executable(dummy_node src/dummy_node.cpp)
 ament_target_dependencies(dummy_node rclcpp std_srvs)
 install(TARGETS dummy_node DESTINATION lib/${PROJECT_NAME})
 
+# Executable 4: server client
+add_executable(server src/add_two_ints_server.cpp)
+ament_target_dependencies(server rclcpp example_interfaces)
+
+add_executable(client src/add_two_ints_client.cpp)
+ament_target_dependencies(client rclcpp example_interfaces)
+
+install(TARGETS
+  server
+  client
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
