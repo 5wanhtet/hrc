@@ -7,10 +7,10 @@
 namespace hrc_task_manager
 {
     // Action node for changing tools: drops the current tool and picks up a new one.
-    class ChangeTool : public BT::SyncActionNode
+    class Change_Tool : public BT::SyncActionNode
     {
     public:
-        ChangeTool(const std::string& name, const BT::NodeConfig& config);
+        Change_Tool(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

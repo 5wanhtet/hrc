@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 
   // Parse CLI args: bt_client [tree_id] [xml_path_optional]
   // Default tree_id if none provided
-  std::string tree_id = "PickAndPlace";
+  std::string tree_id = "Pick_And_Place";
   std::string xml_path;  // empty means "use server map"
 
   // NOTE: argv is an array; use argv[1], argv[2] when argc permits

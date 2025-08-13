@@ -7,10 +7,10 @@
 namespace hrc_task_manager
 {
     // Condition node: Checks if the system/robot is at the expected position.
-    class VerifyPosition : public BT::ConditionNode
+    class Verify_Position : public BT::ConditionNode
     {
     public:
-        VerifyPosition(const std::string& name, const BT::NodeConfig& config);
+        Verify_Position(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

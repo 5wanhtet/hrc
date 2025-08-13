@@ -12,13 +12,13 @@
         <Attach_Tool/>
         <Check_Tool _description="Check for correct tool before carrying out next process"/>
       </Sequence>
-      <AskForHelp/>
+      <Ask_For_Help/>
     </Fallback>
   </BehaviorTree>
 
   <!-- Description of Node Models (used by Groot) -->
   <TreeNodesModel>
-    <Action ID="AskForHelp"
+    <Action ID="Ask_For_Help"
             editable="true"/>
     <Action ID="Attach_Tool"
             editable="true"/>

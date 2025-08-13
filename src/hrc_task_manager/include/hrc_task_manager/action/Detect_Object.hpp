@@ -7,10 +7,10 @@
 namespace hrc_task_manager {
 
     // Action node: Commands the vision system to identify the target object
-    class DetectObject : public BT::SyncActionNode
+    class Detect_Object : public BT::SyncActionNode
     {
     public:
-        DetectObject(const std::string& name, const BT::NodeConfig& config);
+        Detect_Object(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

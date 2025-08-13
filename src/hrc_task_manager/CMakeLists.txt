@@ -32,18 +32,18 @@ install(TARGETS service_utils
 )
 # --- Custom BehaviorTree node sources (these call ServiceUtils) ---
 set(NODE_SRCS
-  src/condition/VerifyPosition.cpp
-  src/condition/CheckTool.cpp
-  src/action/AskForHelp.cpp
-  src/action/ChangeTool.cpp
-  src/action/DetachTool.cpp
-  src/action/DetectObject.cpp
-  src/action/MoveTo.cpp
-  src/action/PickObject.cpp
-  src/action/PlaceObject.cpp
-  src/action/Unbolt.cpp
-  src/action/AttachTool.cpp
-  src/action/AlignToolWithTarget.cpp
+  src/condition/Verify_Position.cpp
+  src/condition/Check_Tool.cpp
+  src/action/Ask_For_Help.cpp
+  src/action/Change_Tool.cpp
+  src/action/Detach_Tool.cpp
+  src/action/Detect_Object.cpp
+  src/action/Move_To.cpp
+  src/action/Pick_Object.cpp
+  src/action/Place_Object.cpp
+  src/action/Unscrewing.cpp
+  src/action/Attach_Tool.cpp
+  src/action/Align_Tool_With_Target.cpp
 )
 
 # Build node sources into a library

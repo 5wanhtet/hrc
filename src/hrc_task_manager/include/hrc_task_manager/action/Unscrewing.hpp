@@ -1,5 +1,5 @@
-#ifndef HRC_TASK_MANAGER__ACTION__UNBOLT_HPP_
-#define HRC_TASK_MANAGER__ACTION__UNBOLT_HPP_
+#ifndef HRC_TASK_MANAGER__ACTION__UNSCREWING_HPP_
+#define HRC_TASK_MANAGER__ACTION__UNSCREWING_HPP_
 
 #include <behaviortree_cpp/action_node.h>
 #include <string>
@@ -8,10 +8,10 @@ namespace hrc_task_manager {
 
     // Action node: Implements the rotation unbolt logic for the robot.
     // This node commands the robot to perform unbolting during the Unbolting task.
-    class Unbolt : public BT::SyncActionNode
+    class Unscrewing : public BT::SyncActionNode
     {
     public:
-        Unbolt(const std::string& name, const BT::NodeConfig& config);
+        Unscrewing(const std::string& name, const BT::NodeConfig& config);
         
         // The tick function is called when executing this node. 
         // It should perform the unbolt operation (or simulate it)

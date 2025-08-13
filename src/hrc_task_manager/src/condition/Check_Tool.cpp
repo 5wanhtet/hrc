@@ -1,23 +1,23 @@
-#include "hrc_task_manager/condition/CheckTool.hpp"
+#include "hrc_task_manager/condition/Check_Tool.hpp"
 #include <hrc_task_manager/service_utils.hpp>
 #include <iostream>
 
 namespace hrc_task_manager
 {
 
-    CheckTool::CheckTool(const std::string& name, const BT::NodeConfig& config)
+    Check_Tool::Check_Tool(const std::string& name, const BT::NodeConfig& config)
     : BT::ConditionNode(name, config)
     {
         // constructor body if needed
     }
 
-    BT::NodeStatus CheckTool::tick()
+    BT::NodeStatus Check_Tool::tick()
     {
         std::cout << "[CheckTool] Checking if the current tool is correct..." << std::endl;
         ServiceUtils::delay_ms(500); 
         // Your actual check logic here 
         
-        bool success = ServiceUtils::call_service("CheckTool");
+        bool success = ServiceUtils::call_service("Check_Tool");
         if (success) {
             std::cout << "[CheckTool] ✓ Tool is correct\n" << std::endl;
             return BT::NodeStatus::SUCCESS;
@@ -27,7 +27,7 @@ namespace hrc_task_manager
         }
     }
 
-    BT::PortsList CheckTool::providedPorts()
+    BT::PortsList Check_Tool::providedPorts()
     {
         return {};  // No ports defined currently; define ports here if needed.
     }

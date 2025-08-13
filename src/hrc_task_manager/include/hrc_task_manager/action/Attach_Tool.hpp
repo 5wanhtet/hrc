@@ -7,10 +7,10 @@
 namespace hrc_task_manager
 {
     // Action node: Attach a new tool in Pick & Place task
-    class AttachTool : public BT::SyncActionNode
+    class Attach_Tool : public BT::SyncActionNode
     {
     public:
-        AttachTool(const std::string& name, const BT::NodeConfig& config);
+        Attach_Tool(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

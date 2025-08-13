@@ -1,20 +1,20 @@
-#include "hrc_task_manager/action/PickObject.hpp"
+#include "hrc_task_manager/action/Pick_Object.hpp"
 #include <hrc_task_manager/service_utils.hpp>
 #include <iostream>
 
 namespace hrc_task_manager
 {
 
-  PickObject::PickObject(const std::string& name, const BT::NodeConfig& config)
+  Pick_Object::Pick_Object(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config)
   {}
 
-  BT::NodeStatus PickObject::tick()
+  BT::NodeStatus Pick_Object::tick()
   {
     std::cout << "[PickObject] EPicking up..." << std::endl;
     ServiceUtils::delay_ms(500);
 
-      bool success = ServiceUtils::call_service("PickObject");
+      bool success = ServiceUtils::call_service("Pick_Object");
         if (success) {
             std::cout << "[PickObject] ✓ Robot successfully picked object\n" << std::endl;
             return BT::NodeStatus::SUCCESS;
@@ -26,7 +26,7 @@ namespace hrc_task_manager
         }
   }
 
-  BT::PortsList PickObject::providedPorts()
+  BT::PortsList Pick_Object::providedPorts()
   {
       return {};
   }

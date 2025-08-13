@@ -5,10 +5,10 @@
 
 namespace hrc_task_manager
 {
-    class AskForHelp : public BT::SyncActionNode
+    class Ask_For_Help : public BT::SyncActionNode
     {
         public:
-            AskForHelp(const std::string& name, const BT::NodeConfig& config);
+            Ask_For_Help(const std::string& name, const BT::NodeConfig& config);
             BT::NodeStatus tick();
             static BT::PortsList providedPorts();
     };

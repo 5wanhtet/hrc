@@ -7,10 +7,10 @@
 namespace hrc_task_manager {
 
     // Action node: Releases the held object, completing the place operation in Pick & Place task.
-    class PlaceObject : public BT::SyncActionNode
+    class Place_Object : public BT::SyncActionNode
     {
     public:
-        PlaceObject(const std::string& name, const BT::NodeConfig& config);
+        Place_Object(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };
