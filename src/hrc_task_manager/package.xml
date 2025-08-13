@@ -5,12 +5,21 @@
   <version>0.0.0</version>
   <description>Package for managing different industrial flows</description>
   <maintainer email="robot.ara24@gmail.com">robotara</maintainer>
-  <license>No License</license>
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- Interface generation for custom srv -->
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- Core runtime deps -->
   <depend>rclcpp</depend>
-  <depend>example_interfaces</depend>
+  <depend>behaviortree_cpp</depend>
+  <depend>std_srvs</depend>
+
+  <!-- Required when package installs interfaces (msg/srv/action) -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
