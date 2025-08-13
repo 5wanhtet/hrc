@@ -22,8 +22,12 @@ void ServiceUtils::initialize(std::shared_ptr<rclcpp::Node> node)
 // Function to request service, respond with success if response received before timeout
 bool ServiceUtils::call_service(const std::string& command)
 {
-    if (!initialized_ || !client_) {
-        std::cout << "ERROR: ServiceUtils not initialized or client not available!\n";
+    if (!client_) {
+    std::cout << "ERROR: ServiceUtils client not available!\n";
+    return false;
+    }
+    if (!initialized_ ) {
+        std::cout << "ERROR: ServiceUtils not initialized!\n";
         return false;
     }
 

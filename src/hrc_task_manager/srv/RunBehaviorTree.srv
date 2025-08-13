@@ -1,0 +1,15 @@
+# File: srv/RunBehaviorTree.srv
+
+# Request
+# tree_id: logical name of the behavior tree to run (e.g., "PickAndPlace")
+# xml_path: optional. If non-empty, server will load the tree from this absolute path.
+# params_json: optional JSON string (reserved for future parameterization)
+string tree_id
+string xml_path
+string params_json
+---
+# Response
+# success: true if the tree completed with SUCCESS
+# message: human-readable result or error
+bool success
+string message

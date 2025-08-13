@@ -58,7 +58,7 @@ int main(int argc, char** argv)
     //     </root>
     //         )";
 
-    const std::string xml_filepath = "/home/robotara/hrc_ws/src/hrc_task_manager/config/PickAndPlace.xml";
+    const std::string xml_filepath = "/home/robotara/hrc/src/hrc_task_manager/config/PickAndPlace.xml";
 
     factory.registerBehaviorTreeFromFile(xml_filepath);
     //auto tree = factory.createTreeFromText(xml_text);
