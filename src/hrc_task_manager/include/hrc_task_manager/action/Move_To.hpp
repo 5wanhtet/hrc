@@ -8,10 +8,10 @@ namespace hrc_task_manager {
 
     // Action node: Performs generic motion to a target location.
     // The position to move to can be passed through ports (parameters).
-    class MoveTo : public BT::SyncActionNode
+    class Move_To : public BT::SyncActionNode
     {
     public:
-        MoveTo(const std::string& name, const BT::NodeConfig& config);
+        Move_To(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
 
         // Declare ports (e.g., position name or coordinates passed as input)

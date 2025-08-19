@@ -7,10 +7,10 @@
 namespace hrc_task_manager {
 
     // Inherit from ConditionNode for condition logic.
-    class CheckTool : public BT::ConditionNode
+    class Check_Tool : public BT::ConditionNode
     {
     public:
-        CheckTool(const std::string& name, const BT::NodeConfig& config);
+        Check_Tool(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

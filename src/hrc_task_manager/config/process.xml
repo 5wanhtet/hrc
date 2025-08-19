@@ -30,7 +30,7 @@
 
   <!-- Description of Node Models (used by Groot) -->
   <TreeNodesModel>
-    <Action ID="AskForHelp"
+    <Action ID="Ask_For_Help"
             editable="true"/>
     <Condition ID="Check_Tool"
                editable="true"/>

@@ -7,10 +7,10 @@
 namespace hrc_task_manager
 {
     // Action node: Detaches the old tool in the Pick & Place task.
-    class DetachTool : public BT::SyncActionNode
+    class Detach_Tool : public BT::SyncActionNode
     {
     public:
-        DetachTool(const std::string& name, const BT::NodeConfig& config);
+        Detach_Tool(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

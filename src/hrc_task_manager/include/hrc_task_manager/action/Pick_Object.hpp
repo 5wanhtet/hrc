@@ -8,10 +8,10 @@ namespace hrc_task_manager {
 
     // Action node: Handles the logic for picking up an object
     // (e.g., using gripper, suction, or pneumatic methods).
-    class PickObject : public BT::SyncActionNode
+    class Pick_Object : public BT::SyncActionNode
     {
     public:
-        PickObject(const std::string& name, const BT::NodeConfig& config);
+        Pick_Object(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };

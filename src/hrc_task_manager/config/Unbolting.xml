@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root BTCPP_format="4">
-  <BehaviorTree ID="Screw">
-    <Fallback>
-      <Sequence>
-        <Move_To name="Move_To_Screw"/>
-        <Fallback>
-          <Verify_Position name="Verify_Current_Position"/>
-          <Detect_Object/>
-          <Move_To name="Move_To_Exact_Screw_Position"/>
-        </Fallback>
-        <RetryUntilSuccessful num_attempts="4">
-          <Align_Tool_With_Target/>
-        </RetryUntilSuccessful>
-        <Unbolt/>
-        <Move_To name="Move_To_Bin"/>
-        <Place_Object name="Place_Object_In_Bin"/>
-      </Sequence>
-      <AskForHelp/>
-    </Fallback>
-  </BehaviorTree>
-
   <BehaviorTree ID="Unbolting">
     <Fallback>
       <Sequence>
@@ -35,14 +15,34 @@
           <AsyncFallback>
             <RetryUntilSuccessful num_attempts="4">
               <SequenceWithMemory>
-                <SubTree ID="Screw"/>
+                <SubTree ID="Unbolting_Screw"/>
               </SequenceWithMemory>
             </RetryUntilSuccessful>
             <HRC _description="this node is temporary, will add more when i know more T^T"/>
           </AsyncFallback>
         </Parallel>
       </Sequence>
-      <AskForHelp/>
+      <Ask_For_Help/>
+    </Fallback>
+  </BehaviorTree>
+
+  <BehaviorTree ID="Unbolting_Screw">
+    <Fallback>
+      <Sequence>
+        <Move_To name="Move_To_Screw"/>
+        <Fallback>
+          <Verify_Position name="Verify_Current_Position"/>
+          <Detect_Object/>
+          <Move_To name="Move_To_Exact_Screw_Position"/>
+        </Fallback>
+        <RetryUntilSuccessful num_attempts="4">
+          <Align_Tool_With_Target/>
+        </RetryUntilSuccessful>
+        <Unscrewing/>
+        <Move_To name="Move_To_Bin"/>
+        <Place_Object name="Place_Object_In_Bin"/>
+      </Sequence>
+      <Ask_For_Help/>
     </Fallback>
   </BehaviorTree>
 
@@ -52,7 +52,7 @@
             editable="true"/>
     <Action ID="Align_Tool_With_Target"
             editable="true"/>
-    <Action ID="AskForHelp"
+    <Action ID="Ask_For_Help"
             editable="true"/>
     <Condition ID="Check_Tool"
                editable="true"/>
@@ -64,7 +64,7 @@
             editable="true"/>
     <Action ID="Place_Object"
             editable="true"/>
-    <Action ID="Unbolt"
+    <Action ID="Unscrewing"
             editable="true"/>
     <Condition ID="Verify_Position"
                editable="true"/>

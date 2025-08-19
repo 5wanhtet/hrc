@@ -5,34 +5,34 @@
 #include <chrono>
 
 // Include only your non-vision node headers here
-#include "hrc_task_manager/action/AskForHelp.hpp"
-#include "hrc_task_manager/condition/CheckTool.hpp"
-#include "hrc_task_manager/action/MoveTo.hpp"
-#include "hrc_task_manager/action/PickObject.hpp"
-#include "hrc_task_manager/condition/VerifyPosition.hpp"
-#include "hrc_task_manager/action/PlaceObject.hpp"
-#include "hrc_task_manager/action/DetachTool.hpp"
-#include "hrc_task_manager/action/AttachTool.hpp"
-#include "hrc_task_manager/action/Unbolt.hpp"
-#include "hrc_task_manager/action/DetectObject.hpp"
-#include "hrc_task_manager/action/AlignToolWithTarget.hpp"
-#include "hrc_task_manager/action/ChangeTool.hpp"
+#include "hrc_task_manager/action/Ask_For_Help.hpp"
+#include "hrc_task_manager/condition/Check_Tool.hpp"
+#include "hrc_task_manager/action/Move_To.hpp"
+#include "hrc_task_manager/action/Pick_Object.hpp"
+#include "hrc_task_manager/condition/Verify_Position.hpp"
+#include "hrc_task_manager/action/Place_Object.hpp"
+#include "hrc_task_manager/action/Detach_Tool.hpp"
+#include "hrc_task_manager/action/Attach_Tool.hpp"
+#include "hrc_task_manager/action/Unscrewing.hpp"
+#include "hrc_task_manager/action/Detect_Object.hpp"
+#include "hrc_task_manager/action/Align_Tool_With_Target.hpp"
+#include "hrc_task_manager/action/Change_Tool.hpp"
 #include "hrc_task_manager/service_utils.hpp"
 
 void RegisterCustomNodes(BT::BehaviorTreeFactory& factory)
 {
-    factory.registerNodeType<hrc_task_manager::AskForHelp>("AskForHelp");
-    factory.registerNodeType<hrc_task_manager::CheckTool>("Check_Tool");
-    factory.registerNodeType<hrc_task_manager::MoveTo>("Move_To");
-    factory.registerNodeType<hrc_task_manager::PickObject>("Pick_Object");
-    factory.registerNodeType<hrc_task_manager::VerifyPosition>("Verify_Position");
-    factory.registerNodeType<hrc_task_manager::PlaceObject>("Place_Object");
-    factory.registerNodeType<hrc_task_manager::DetachTool>("Detach_Tool");
-    factory.registerNodeType<hrc_task_manager::AttachTool>("Attach_Tool");
-    factory.registerNodeType<hrc_task_manager::Unbolt>("Unbolt");
-    factory.registerNodeType<hrc_task_manager::DetectObject>("DetectObject");
-    factory.registerNodeType<hrc_task_manager::AlignToolWithTarget>("AlignToolWithTarget");
-    factory.registerNodeType<hrc_task_manager::ChangeTool>("Change_Tool");
+    factory.registerNodeType<hrc_task_manager::Ask_For_Help>("Ask_For_Help");
+    factory.registerNodeType<hrc_task_manager::Check_Tool>("Check_Tool");
+    factory.registerNodeType<hrc_task_manager::Move_To>("Move_To");
+    factory.registerNodeType<hrc_task_manager::Pick_Object>("Pick_Object");
+    factory.registerNodeType<hrc_task_manager::Verify_Position>("Verify_Position");
+    factory.registerNodeType<hrc_task_manager::Place_Object>("Place_Object");
+    factory.registerNodeType<hrc_task_manager::Detach_Tool>("Detach_Tool");
+    factory.registerNodeType<hrc_task_manager::Attach_Tool>("Attach_Tool");
+    factory.registerNodeType<hrc_task_manager::Unscrewing>("Unscrewing");
+    factory.registerNodeType<hrc_task_manager::Detect_Object>("Detect_Object");
+    factory.registerNodeType<hrc_task_manager::Align_Tool_With_Target>("Align_Tool_With_Target");
+    factory.registerNodeType<hrc_task_manager::Change_Tool>("Change_Tool");
 }
 
 int main(int argc, char** argv)
@@ -52,7 +52,7 @@ int main(int argc, char** argv)
     //     <root BTCPP_format="4">
     //       <BehaviorTree ID="Untitled">
     //         <Sequence>
-    //             <AskForHelp/>
+    //             <Ask_For_Help/>
     //         </Sequence>
     //       </BehaviorTree>
     //     </root>
@@ -63,7 +63,7 @@ int main(int argc, char** argv)
     factory.registerBehaviorTreeFromFile(xml_filepath);
     //auto tree = factory.createTreeFromText(xml_text);
 
-    auto tree = factory.createTree("PickAndPlace");
+    auto tree = factory.createTree("Pick_And_Place");
 
     // helper function to print the tree
     BT::printTreeRecursively(tree.rootNode());

@@ -5,10 +5,10 @@
 #include <string>
 namespace hrc_task_manager {
     // Action node: Performs micro adjustment/alignment of the tool with the target.
-    class AlignToolWithTarget : public BT::SyncActionNode
+    class Align_Tool_With_Target : public BT::SyncActionNode
     {
     public:
-        AlignToolWithTarget(const std::string& name, const BT::NodeConfig& config);
+        Align_Tool_With_Target(const std::string& name, const BT::NodeConfig& config);
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
     };
